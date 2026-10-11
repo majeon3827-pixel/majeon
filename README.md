@@ -21,7 +21,9 @@ app/            레이아웃(폰트·메타데이터·테마), 페이지, 전역
 components/     섹션 단위 컴포넌트 (Header, Hero, BrandStory, Features, Products, Compare, Downloads, Contact, Footer)
 content/site.ts 모든 문구·스펙·연락처·링크. 내용 수정은 이 파일만 고치면 됩니다.
 public/images/  최적화된 WebP 이미지
-scripts/        build-images.mjs — 원본 이미지를 WebP 로 변환하는 일회성 스크립트
+public/docs/    웹용으로 압축한 제품 PDF + 첫 페이지 썸네일(WebP)
+scripts/        build-images.mjs — 원본 이미지를 WebP 로 변환
+                build-docs.mjs / build-docs.py — 원본 PDF를 압축하고 썸네일 생성 (`npm run build:docs`)
 ```
 
 ## 콘텐츠 수정
@@ -29,6 +31,10 @@ scripts/        build-images.mjs — 원본 이미지를 WebP 로 변환하는 �
 - 문구, 제품 스펙, 비교표 항목, 연락처, 회사 정보: `content/site.ts`
 - 색상·폰트 토큰: `app/globals.css` 의 `:root` / `.dark`
 - 이미지 교체: `public/images/` 에 같은 이름으로 덮어쓰거나 `content/site.ts` 의 경로를 바꿉니다.
+- PDF 교체: 원본 PDF를 `docs-src/` (git 제외)에 `plus-intro.pdf` 같은 이름으로 두고 `npm run build:docs` 를 실행합니다.
+  PyMuPDF가 필요합니다 (`pip install pymupdf`, 다른 파이썬을 쓰려면 `MAJEON_PYTHON=...`).
+  3MB를 넘는 파일은 페이지를 200dpi 이미지로 변환하므로 글자 선택이 안 되지만 화면 열람·인쇄에는 충분합니다.
+  Light 의 사용·설치설명서는 Fusion 과 동일 문서라 Fusion 파일을 공유합니다.
 
 ## 문의 폼
 

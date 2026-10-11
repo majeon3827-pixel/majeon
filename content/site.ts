@@ -205,24 +205,54 @@ export const compareRows = [
   "제품 중량",
 ];
 
-export const downloads = [
+export type DocFile = {
+  label: string;
+  file: string; // public/docs 경로
+  thumb: string; // 첫 페이지 썸네일
+  pages: number;
+  note?: string;
+};
+
+export const downloads: {
+  id: string;
+  name: string;
+  tagline: string;
+  driveHref: string;
+  docs: DocFile[];
+}[] = [
   {
     id: "plus",
     name: "MAJEON Plus",
-    href: "https://drive.google.com/drive/folders/128YJ3Qjb7pm0ZMn1BizYS9s6h12ZvJ2f?usp=drive_link",
-    files: ["제품소개서", "사용설명서", "설치설명서"],
+    tagline: "프리미엄 모델 · 제품소개서 4p",
+    driveHref: "https://drive.google.com/drive/folders/128YJ3Qjb7pm0ZMn1BizYS9s6h12ZvJ2f?usp=drive_link",
+    docs: [
+      { label: "제품소개서", file: "/docs/plus-intro.pdf", thumb: "/docs/plus-intro.webp", pages: 4 },
+      { label: "사용설명서", file: "/docs/plus-manual.pdf", thumb: "/docs/plus-manual.webp", pages: 2 },
+      { label: "설치설명서", file: "/docs/plus-install.pdf", thumb: "/docs/plus-install.webp", pages: 2 },
+    ],
   },
   {
     id: "fusion",
     name: "MAJEON Fusion",
-    href: "https://drive.google.com/drive/folders/19x9rvDQ2hu4Y-bm7Y577W2-fpR2hd242?usp=drive_link",
-    files: ["제품소개자료", "사용설명서", "설치설명서"],
+    tagline: "실속 모델 · 리플릿 1p",
+    driveHref: "https://drive.google.com/drive/folders/19x9rvDQ2hu4Y-bm7Y577W2-fpR2hd242?usp=drive_link",
+    docs: [
+      { label: "제품소개자료", file: "/docs/fusion-intro.pdf", thumb: "/docs/fusion-intro.webp", pages: 1 },
+      { label: "사용설명서", file: "/docs/fusion-manual.pdf", thumb: "/docs/fusion-manual.webp", pages: 1 },
+      { label: "설치설명서", file: "/docs/fusion-install.pdf", thumb: "/docs/fusion-install.webp", pages: 1 },
+    ],
   },
   {
     id: "light",
     name: "MAJEON Light",
-    href: "https://drive.google.com/drive/folders/19fnxV8IUosVfSSQWG9Yi5_PBng6pyEmN?usp=drive_link",
-    files: ["제품소개자료", "사용설명서", "설치설명서"],
+    tagline: "컴팩트 모델 · 리플릿 1p",
+    driveHref: "https://drive.google.com/drive/folders/19fnxV8IUosVfSSQWG9Yi5_PBng6pyEmN?usp=drive_link",
+    docs: [
+      { label: "제품소개자료", file: "/docs/light-intro.pdf", thumb: "/docs/light-intro.webp", pages: 1 },
+      // Light의 사용·설치설명서는 Fusion과 동일한 문서입니다.
+      { label: "사용설명서", file: "/docs/fusion-manual.pdf", thumb: "/docs/fusion-manual.webp", pages: 1, note: "Fusion·Light 공용" },
+      { label: "설치설명서", file: "/docs/fusion-install.pdf", thumb: "/docs/fusion-install.webp", pages: 1, note: "Fusion·Light 공용" },
+    ],
   },
 ];
 

@@ -42,3 +42,6 @@ next-env.d.ts
 
 # oh-my-claudecode state
 .omc/
+
+# original product PDFs (large; use npm run build:docs)
+/docs-src/
