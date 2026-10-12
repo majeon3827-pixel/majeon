@@ -24,6 +24,7 @@ public/images/  최적화된 WebP 이미지
 public/docs/    웹용으로 압축한 제품 PDF + 첫 페이지 썸네일(WebP)
 scripts/        build-images.mjs — 원본 이미지를 WebP 로 변환
                 build-docs.mjs / build-docs.py — 원본 PDF를 압축하고 썸네일 생성 (`npm run build:docs`)
+                build-icons.mjs — 붉은 m 파비콘 세트(app/icon.svg, favicon.ico, apple-icon.png) 생성
 ```
 
 ## 콘텐츠 수정
