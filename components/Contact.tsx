@@ -27,18 +27,8 @@ export function Contact() {
               className="flex items-center justify-between rounded-2xl border border-line bg-surface p-5 transition hover:border-accent/40 hover:shadow-md"
             >
               <div>
-                <div className="text-xs font-semibold tracking-wide text-muted">대표 전화</div>
+                <div className="text-xs font-semibold tracking-wide text-muted">대표 전화 · 설치 · A/S</div>
                 <div className="mt-1 text-xl font-extrabold tracking-tight">{contact.phone}</div>
-              </div>
-              <span className="rounded-full bg-accent-soft px-3 py-1 text-xs font-bold text-accent">전화하기</span>
-            </a>
-            <a
-              href={tel(contact.ars)}
-              className="flex items-center justify-between rounded-2xl border border-line bg-surface p-5 transition hover:border-accent/40 hover:shadow-md"
-            >
-              <div>
-                <div className="text-xs font-semibold tracking-wide text-muted">설치 기술 · A/S (ARS)</div>
-                <div className="mt-1 text-xl font-extrabold tracking-tight">{contact.ars}</div>
               </div>
               <span className="rounded-full bg-accent-soft px-3 py-1 text-xs font-bold text-accent">전화하기</span>
             </a>
@@ -58,8 +48,6 @@ export function Contact() {
             <div className="font-semibold">상담 시간</div>
             <p className="mt-1 text-ink">{contact.hours}</p>
             <p className="mt-1 text-muted">{contact.hoursNote}</p>
-            <div className="mt-4 font-semibold">오시는 길</div>
-            <p className="mt-1 text-muted">{contact.address}</p>
           </Reveal>
         </div>
 

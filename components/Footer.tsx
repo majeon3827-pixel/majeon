@@ -41,10 +41,6 @@ export function Footer() {
             <dt className="shrink-0 font-semibold text-ink/80">이메일</dt>
             <dd>{company.email}</dd>
           </div>
-          <div className="flex gap-2 sm:col-span-2 lg:col-span-4">
-            <dt className="shrink-0 font-semibold text-ink/80">주소</dt>
-            <dd>{company.address}</dd>
-          </div>
         </dl>
         <p className="mt-6 text-xs text-muted">
           © {year} {company.name}. All rights reserved. 제품의 외관과 사양은 품질 개선을 위해 예고 없이 변경될 수 있습니다.
